@@ -1,0 +1,15 @@
+{
+  "totalRepositories": 106,
+  "repositoriesWithApps": 2,
+  "totalApps": 5,
+  "totalLinterErrors": 109,
+  "repositoriesWithErrors": 2,
+  "topRuleViolations": {
+    "ui5-linter-no-deprecated-api": 71,
+    "ui5-linter-no-globals-js": 38
+  },
+  "allRuleViolations": {
+    "ui5-linter-no-deprecated-api": 71,
+    "ui5-linter-no-globals-js": 38
+  }
+}

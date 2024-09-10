@@ -1,0 +1,38 @@
+name: Analyze UI5 Linter Results
+
+on:
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      run: |
+        npm install
+        npm install -g @ui5/cli @ui5/linter
+
+    - name: Run search script
+      run: node searchGitHub.js
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Configure Git
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+
+    - name: Commit and push if changes
+      run: |
+        git add processed-repos.json
+        git add ui5-project-analysis.json
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update linter analysis report" && git push)
