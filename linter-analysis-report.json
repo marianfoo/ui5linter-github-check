@@ -1,15 +1,22 @@
 {
-  "totalRepositories": 106,
-  "repositoriesWithApps": 2,
-  "totalApps": 5,
-  "totalLinterErrors": 109,
-  "repositoriesWithErrors": 2,
+  "totalRepositories": 914,
+  "repositoriesWithApps": 22,
+  "totalApps": 257,
+  "totalLinterErrors": 2328,
+  "repositoriesWithErrors": 17,
   "topRuleViolations": {
-    "ui5-linter-no-deprecated-api": 71,
-    "ui5-linter-no-globals-js": 38
+    "ui5-linter-no-deprecated-api": 1317,
+    "ui5-linter-no-globals-js": 972,
+    "ui5-linter-no-deprecated-library": 32,
+    "ui5-linter-async-component-flags": 11,
+    "ui5-linter-no-pseudo-modules": 1
   },
   "allRuleViolations": {
-    "ui5-linter-no-deprecated-api": 71,
-    "ui5-linter-no-globals-js": 38
+    "ui5-linter-no-deprecated-api": 1317,
+    "ui5-linter-no-globals-js": 972,
+    "ui5-linter-no-deprecated-library": 32,
+    "ui5-linter-async-component-flags": 11,
+    "ui5-linter-no-pseudo-modules": 1,
+    "ui5-linter-no-deprecated-property": 1
   }
 }
