@@ -2,8 +2,6 @@ name: Analyze UI5 Linter Results
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 */12 * * *'
 
 jobs:
   analyze:
@@ -21,12 +19,15 @@ jobs:
     - name: Install dependencies
       run: |
         npm install
-        npm install -g @ui5/cli @ui5/linter
+        npm install -g @ui5/linter@0.3.5
 
     - name: Run search script
       run: node searchGitHub.js
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Run analysis script
+      run: node analyize.js
 
     - name: Configure Git
       run: |
@@ -37,4 +38,5 @@ jobs:
       run: |
         git add processed-repos.json
         git add ui5-project-analysis.json
+        git add linter-analysis-report.json
         git diff --quiet && git diff --staged --quiet || (git commit -m "Update linter analysis report" && git push)
