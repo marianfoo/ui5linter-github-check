@@ -45,6 +45,10 @@ jobs:
       with:
         node-version: '20'
 
+    - name: Commit and push if changes
+      run: |
+        git pull
+
     - name: Install dependencies
       run: npm install
 
