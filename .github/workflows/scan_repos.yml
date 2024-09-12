@@ -1,12 +1,11 @@
-name: Analyze UI5 Linter Results
+name: Scan Repos and Analyze UI5 Linter Results
 
 on:
   workflow_dispatch:
 
 jobs:
-  analyze:
+  search_repos:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -17,12 +16,44 @@ jobs:
         node-version: '20'
 
     - name: Install dependencies
-      run: |
-        npm install
-        npm install -g @ui5/linter@0.3.5
+      run: npm install
 
     - name: Run search script
-      run: node searchGitHub.js
+      run: node searchUI5Repos.js
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Configure Git
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+
+    - name: Commit and push if changes
+      run: |
+        git add .
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update UI5 repos list ($(date +'%Y-%m-%d'))" && git push)
+
+  ui5_linting:
+    needs: search_repos
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Get UI5 Linter version
+      id: ui5-linter-version
+      run: echo "UI5_LINTER_VERSION=$(npm list @ui5/linter --json | jq -r '.dependencies."@ui5/linter".version')" >> $GITHUB_OUTPUT
+
+    - name: Run UI5 linting check
+      run: node ui5lintCheckRepos.js
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -36,7 +67,5 @@ jobs:
 
     - name: Commit and push if changes
       run: |
-        git add processed-repos.json
-        git add ui5-project-analysis.json
-        git add linter-analysis-report.json
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Update linter analysis report" && git push)
+        git add .
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update linter analysis report (UI5 Linter v${{ steps.ui5-linter-version.outputs.UI5_LINTER_VERSION }}, $(date +'%Y-%m-%d'))" && git push)
