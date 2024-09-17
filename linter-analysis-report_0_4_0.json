@@ -1,0 +1,26 @@
+{
+  "ui5LinterVersion": "0.4.0",
+  "totalRepositories": 1025,
+  "repositoriesWithApps": 22,
+  "totalApps": 257,
+  "totalLinterErrors": 2344,
+  "repositoriesWithErrors": 19,
+  "topRuleViolations": {
+    "no-deprecated-api": 1309,
+    "no-globals": 972,
+    "csp-unsafe-inline-script": 43,
+    "no-deprecated-library": 32,
+    "no-deprecated-parameter": 24
+  },
+  "allRuleViolations": {
+    "no-deprecated-api": 1309,
+    "no-globals": 972,
+    "csp-unsafe-inline-script": 43,
+    "no-deprecated-library": 32,
+    "no-deprecated-parameter": 24,
+    "async-component-flags": 11,
+    "no-pseudo-modules": 1,
+    "no-deprecated-property": 1
+  },
+  "deprecatedApiMessages": {}
+}
