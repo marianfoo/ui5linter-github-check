@@ -40,8 +40,8 @@ data.forEach(repo => {
               }
               ruleViolations[message.ruleId]++;
               
-              // Check for "ui5-linter-no-deprecated-api" ruleId
-              if (message.ruleId === "ui5-linter-no-deprecated-api") {
+              // Check for "no-deprecated-api" ruleId
+              if (message.ruleId === "no-deprecated-api") {
                 if (!deprecatedApiMessages[message.message]) {
                   deprecatedApiMessages[message.message] = 0;
                 }
