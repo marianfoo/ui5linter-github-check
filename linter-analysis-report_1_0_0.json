@@ -1,44 +1,57 @@
 {
   "ui5LinterVersion": "1.0.0",
-  "totalRepositories": 1025,
+  "totalRepositories": 1026,
   "repositoriesWithApps": 22,
   "totalApps": 257,
-  "totalLinterErrors": 2344,
-  "repositoriesWithErrors": 19,
+  "totalLinterErrors": 3504,
+  "repositoriesWithErrors": 21,
   "topRuleViolations": {
-    "no-deprecated-api": 1309,
+    "no-deprecated-api": 3885,
     "no-globals": 972,
+    "no-deprecated-library": 146,
     "csp-unsafe-inline-script": 43,
-    "no-deprecated-library": 32,
-    "no-deprecated-parameter": 24
+    "async-component-flags": 11
   },
   "allRuleViolations": {
-    "no-deprecated-api": 1309,
+    "no-deprecated-api": 3885,
     "no-globals": 972,
+    "no-deprecated-library": 146,
     "csp-unsafe-inline-script": 43,
-    "no-deprecated-library": 32,
-    "no-deprecated-parameter": 24,
     "async-component-flags": 11,
-    "no-pseudo-modules": 1,
-    "no-deprecated-property": 1
+    "no-pseudo-modules": 1
   },
   "deprecatedApiMessages": {
+    "Outdated spelling of bootstrap parameter: 'data-sap-ui-resourceroots'; should be written as 'data-sap-ui-resource-roots'": 505,
     "Call to deprecated function 'getCore' (sap.ui.getCore)": 465,
+    "Outdated spelling of bootstrap parameter: 'data-sap-ui-compatVersion'; should be written as 'data-sap-ui-compat-version'": 420,
+    "Use of deprecated property 'viewName'.Use 'name' instead'": 325,
+    "Use of deprecated property 'viewId'.Use 'id' instead'": 321,
+    "Outdated spelling of bootstrap parameter: 'data-sap-ui-oninit'; should be written as 'data-sap-ui-on-init'": 313,
     "Call to deprecated function 'attachInit' of class 'Core'": 309,
+    "Outdated spelling of bootstrap parameter: 'data-sap-ui-frameOptions'; should be written as 'data-sap-ui-frame-options'": 185,
+    "Use of deprecated property 'viewPath'.Use 'path' instead'": 154,
+    "Use of deprecated property 'viewLevel'.Use 'level' instead'": 153,
     "Import of deprecated module 'sap/m/MessagePage'": 91,
     "Import of deprecated module 'sap/base/util/UriParameters'": 88,
+    "Missing bootstrap parameter 'data-sap-ui-compat-version'": 88,
     "Call to deprecated function 'getLanguage' of class 'Configuration'": 75,
     "Call to deprecated function 'getConfiguration' of class 'Core'": 75,
+    "Redundant bootstrap parameter 'data-sap-ui-preload' should be removed": 69,
     "Call to deprecated function 'bootstrap' (sap.ushell.bootstrap)": 33,
     "Call to deprecated function 'getMessageManager' of class 'Core'": 32,
     "Import of deprecated module 'sap/f/Avatar'": 30,
     "Call to deprecated function 'setModel' of class 'Core'": 28,
+    "Usage of deprecated variant of 'sap/ui/core/theming/Parameters.get'": 16,
     "Use of deprecated property 'upperCase' of class 'GroupHeaderListItem'": 12,
     "Import of deprecated module 'sap/ui/core/XMLComposite'": 9,
+    "Outdated spelling of bootstrap parameter: 'data-sap-ui-flexibilityServices'; should be written as 'data-sap-ui-flexibility-services'": 8,
     "Use of deprecated property 'numberUnit' of class 'ObjectNumber'": 8,
+    "Usage of deprecated parameter 'synchronizationMode' of constructor 'sap/ui/model/odata/v4/ODataModel'": 8,
     "Call to deprecated function 'applyTheme' of class 'Core'": 6,
+    "Redundant bootstrap parameter 'data-sap-ui-bindingSyntax' should be removed": 5,
     "Use of deprecated property 'minWidth' of class 'SimpleForm'": 4,
     "Use of deprecated API 'jQuery.sap.getResourcePath'": 3,
+    "Missing bootstrap parameter 'data-sap-ui-async'": 3,
     "Import of deprecated module 'sap/m/MessagePopoverItem'": 3,
     "Use of deprecated property 'select' of class 'SegmentedButton'": 3,
     "Call to deprecated function 'createComponent' of class 'Core'": 3,
@@ -46,6 +59,7 @@
     "Use of deprecated API 'jQuery.sap.resources'": 3,
     "Import of deprecated module 'sap/ui/ux3/NavigationBar'": 2,
     "Call to deprecated function 'byId' of class 'Core'": 2,
+    "Use of deprecated value 'startup' for bootstrap parameter 'data-sap-ui-on-init'": 2,
     "Call to deprecated function 'createRenderManager' of class 'Core'": 2,
     "Use of deprecated API 'jQuery.sap.getUriParameters'": 2,
     "Use of deprecated API 'jQuery.sap.log.info'": 2,
@@ -59,6 +73,7 @@
     "Use of deprecated property 'isResponsive' of class 'DeltaMicroChart'": 1,
     "Import of deprecated module 'sap/viz/ui5/Pie'": 1,
     "Call to deprecated function 'load' (sap.ui.component.load)": 1,
+    "Use of deprecated property 'component'": 1,
     "Call to deprecated function 'getEventBus' of class 'Core'": 1,
     "Use of deprecated property 'useHorizontalLayout' of class 'SmartForm'": 1,
     "Call to deprecated function 'xmlfragment' (sap.ui.xmlfragment)": 1,
@@ -66,24 +81,39 @@
   },
   "ruleViolationDetails": {
     "no-deprecated-api": {
-      "count": 1309,
+      "count": 3885,
       "messages": {
+        "Outdated spelling of bootstrap parameter: 'data-sap-ui-resourceroots'; should be written as 'data-sap-ui-resource-roots'": 505,
         "Call to deprecated function 'getCore' (sap.ui.getCore)": 465,
+        "Outdated spelling of bootstrap parameter: 'data-sap-ui-compatVersion'; should be written as 'data-sap-ui-compat-version'": 420,
+        "Use of deprecated property 'viewName'.Use 'name' instead'": 325,
+        "Use of deprecated property 'viewId'.Use 'id' instead'": 321,
+        "Outdated spelling of bootstrap parameter: 'data-sap-ui-oninit'; should be written as 'data-sap-ui-on-init'": 313,
         "Call to deprecated function 'attachInit' of class 'Core'": 309,
+        "Outdated spelling of bootstrap parameter: 'data-sap-ui-frameOptions'; should be written as 'data-sap-ui-frame-options'": 185,
+        "Use of deprecated property 'viewPath'.Use 'path' instead'": 154,
+        "Use of deprecated property 'viewLevel'.Use 'level' instead'": 153,
         "Import of deprecated module 'sap/m/MessagePage'": 91,
         "Import of deprecated module 'sap/base/util/UriParameters'": 88,
+        "Missing bootstrap parameter 'data-sap-ui-compat-version'": 88,
         "Call to deprecated function 'getLanguage' of class 'Configuration'": 75,
         "Call to deprecated function 'getConfiguration' of class 'Core'": 75,
+        "Redundant bootstrap parameter 'data-sap-ui-preload' should be removed": 69,
         "Call to deprecated function 'bootstrap' (sap.ushell.bootstrap)": 33,
         "Call to deprecated function 'getMessageManager' of class 'Core'": 32,
         "Import of deprecated module 'sap/f/Avatar'": 30,
         "Call to deprecated function 'setModel' of class 'Core'": 28,
+        "Usage of deprecated variant of 'sap/ui/core/theming/Parameters.get'": 16,
         "Use of deprecated property 'upperCase' of class 'GroupHeaderListItem'": 12,
         "Import of deprecated module 'sap/ui/core/XMLComposite'": 9,
+        "Outdated spelling of bootstrap parameter: 'data-sap-ui-flexibilityServices'; should be written as 'data-sap-ui-flexibility-services'": 8,
         "Use of deprecated property 'numberUnit' of class 'ObjectNumber'": 8,
+        "Usage of deprecated parameter 'synchronizationMode' of constructor 'sap/ui/model/odata/v4/ODataModel'": 8,
         "Call to deprecated function 'applyTheme' of class 'Core'": 6,
+        "Redundant bootstrap parameter 'data-sap-ui-bindingSyntax' should be removed": 5,
         "Use of deprecated property 'minWidth' of class 'SimpleForm'": 4,
         "Use of deprecated API 'jQuery.sap.getResourcePath'": 3,
+        "Missing bootstrap parameter 'data-sap-ui-async'": 3,
         "Import of deprecated module 'sap/m/MessagePopoverItem'": 3,
         "Use of deprecated property 'select' of class 'SegmentedButton'": 3,
         "Call to deprecated function 'createComponent' of class 'Core'": 3,
@@ -91,6 +121,7 @@
         "Use of deprecated API 'jQuery.sap.resources'": 3,
         "Import of deprecated module 'sap/ui/ux3/NavigationBar'": 2,
         "Call to deprecated function 'byId' of class 'Core'": 2,
+        "Use of deprecated value 'startup' for bootstrap parameter 'data-sap-ui-on-init'": 2,
         "Call to deprecated function 'createRenderManager' of class 'Core'": 2,
         "Use of deprecated API 'jQuery.sap.getUriParameters'": 2,
         "Use of deprecated API 'jQuery.sap.log.info'": 2,
@@ -104,6 +135,7 @@
         "Use of deprecated property 'isResponsive' of class 'DeltaMicroChart'": 1,
         "Import of deprecated module 'sap/viz/ui5/Pie'": 1,
         "Call to deprecated function 'load' (sap.ui.component.load)": 1,
+        "Use of deprecated property 'component'": 1,
         "Call to deprecated function 'getEventBus' of class 'Core'": 1,
         "Use of deprecated property 'useHorizontalLayout' of class 'SmartForm'": 1,
         "Call to deprecated function 'xmlfragment' (sap.ui.xmlfragment)": 1,
@@ -144,43 +176,31 @@
         "Access of global variable 'sap' (sap.ui.xmlfragment)": 1
       }
     },
+    "no-deprecated-library": {
+      "count": 146,
+      "messages": {
+        "Use of deprecated theme 'sap_belize'": 114,
+        "Use of deprecated library 'themelib_sap_belize'": 32
+      }
+    },
     "csp-unsafe-inline-script": {
       "count": 43,
       "messages": {
         "Use of unsafe inline script": 43
       }
     },
-    "no-deprecated-library": {
-      "count": 32,
-      "messages": {
-        "Use of deprecated library 'themelib_sap_belize'": 32
-      }
-    },
-    "no-deprecated-parameter": {
-      "count": 24,
-      "messages": {
-        "Usage of deprecated variant of 'sap/ui/core/theming/Parameters.get'": 16,
-        "Usage of deprecated parameter 'synchronizationMode' of constructor 'sap/ui/model/odata/v4/ODataModel'": 8
-      }
-    },
     "async-component-flags": {
       "count": 11,
       "messages": {
         "Component is not configured for asynchronous loading.": 5,
-        "Component implements the sap.ui.core.IAsyncContentCreation interface. The redundant \"async\" flag at \"/sap.ui5/rootView/async\" should be removed from the component manifest": 5,
+        "Component implements the sap.ui.core.IAsyncContentCreation interface. The redundant 'async' flag at '/sap.ui5/rootView/async' should be removed from the component manifest": 5,
         "Component does not specify that it uses the descriptor via the manifest.json file": 1
       }
     },
     "no-pseudo-modules": {
       "count": 1,
       "messages": {
-        "Deprecated access to enum pseudo module 'sap/f/LayoutType'": 1
-      }
-    },
-    "no-deprecated-property": {
-      "count": 1,
-      "messages": {
-        "Use of deprecated property 'component'": 1
+        "Deprecated access of enum pseudo module 'sap/f/LayoutType'": 1
       }
     }
   }
